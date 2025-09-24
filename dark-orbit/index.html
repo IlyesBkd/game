@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dark Orbit - Le Jeu de Combat Spatial Épique</title>
+    <link rel="stylesheet" href="styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700;900&family=Roboto:wght@300;400;500;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="hero-background">
+            <img src="dark-orbit-image.jpg" alt="Dark Orbit - Combat Spatial" class="hero-image">
+            <div class="hero-overlay"></div>
+        </div>
+        
+        <div class="hero-content">
+            <div class="container">
+                <div class="hero-text">
+                    <div class="logo-container">
+                        <img src="dark-orbit-logo.png" alt="Dark Orbit Logo" class="game-logo">
+                    </div>
+                    
+                    <div class="single-cta">
+                        <button class="btn-primary-large" onclick="trackConversion('play-now')">
+                            <span class="btn-icon">🚀</span>
+                            Jouer Maintenant - GRATUIT
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Tracking Script -->
+    <script>
+        function trackConversion(action) {
+            // Ici vous pouvez ajouter votre code de tracking CPA
+            console.log('Conversion tracked:', action);
+            
+            // Redirection vers le site officiel Dark Orbit
+            if (action === 'play-now') {
+                window.open('https://lp.darkorbit.com/', '_blank');
+            }
+        }
+
+        // Animation au scroll
+        window.addEventListener('scroll', function() {
+            const elements = document.querySelectorAll('.feature-card, .trust-item');
+            elements.forEach(element => {
+                const elementTop = element.getBoundingClientRect().top;
+                const elementVisible = 150;
+                
+                if (elementTop < window.innerHeight - elementVisible) {
+                    element.classList.add('animate-in');
+                }
+            });
+        });
+    </script>
+</body>
+</html>
